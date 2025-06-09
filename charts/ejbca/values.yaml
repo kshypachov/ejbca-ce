@@ -24,7 +24,7 @@ ejbca:
   ## only applicable for quick setup of ephemeral test environments
   #superadminPasswordOverride: "foo123"
   useEphemeralH2Database: false
-  useH2Persistence: false
+  useH2Persistence: true
   #existingH2PersistenceClaim: "database-data-claim"
   env:
     TLS_SETUP_ENABLED: "later"
@@ -187,7 +187,7 @@ nginx:
 # External communication from cluster
 # Requires services.proxyAJP or services.proxyHttp to be enabled for adminweb access
 ingress:
-  enabled: false
+  enabled: true
   className: "nginx"
   annotations:
     ## Do not redirect HTTP to HTTPS
@@ -200,11 +200,11 @@ ingress:
     nginx.ingress.kubernetes.io/auth-tls-pass-certificate-to-upstream: "true"
     ## Verification depth of the client certificates chain
     nginx.ingress.kubernetes.io/auth-tls-verify-depth: "1"
-  hosts: []
-  #- host: ""
-  #  paths:
-  #    - path: /ejbca
-  #      pathType: Prefix
+  hosts:  
+    - host: ejbca.office
+     paths:
+       - path: /ejbca
+         pathType: Prefix
   tls: []
 resources: {}
 # https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
