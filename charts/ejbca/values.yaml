@@ -202,9 +202,9 @@ ingress:
     nginx.ingress.kubernetes.io/auth-tls-verify-depth: "1"
   hosts:  
     - host: ejbca.office
-     paths:
-       - path: /ejbca
-         pathType: Prefix
+      paths:
+        - path: /ejbca
+          pathType: Prefix
   tls: []
 resources: {}
 # https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
