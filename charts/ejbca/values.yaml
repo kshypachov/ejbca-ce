@@ -22,9 +22,9 @@ ejbca:
   #appserverTruststoreSecret: truststore-secret
 
   ## only applicable for quick setup of ephemeral test environments
-  #superadminPasswordOverride: "foo123"
-  useEphemeralH2Database: false
-  useH2Persistence: true
+  superadminPasswordOverride: "foo123"
+  useEphemeralH2Database: true
+  #useH2Persistence: true
   #existingH2PersistenceClaim: "database-data-claim"
   env:
     TLS_SETUP_ENABLED: "later"
