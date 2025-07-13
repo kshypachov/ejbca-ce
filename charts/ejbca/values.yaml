@@ -166,7 +166,7 @@ services:
 # Requires services.proxyHttp to be enabled
 nginx:
   image: nginx:1.27.1
-  enabled: true
+  enabled: false
   initializeWithSelfSignedTls: false
   host: "ejbcahost"
   externalConfiguration:
